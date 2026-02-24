@@ -1,17 +1,45 @@
-# React + Vite
+# Password Generator (React + Tailwind)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple password generator built with **React Hooks** and styled using **Tailwind CSS**.  
+It can generate passwords with:
+- Letters (default)
+- Optional Numbers
+- Optional Symbols
+- Custom Length (slider)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- ✅ Auto-generate password when settings change
+- ✅ Length slider (min–max)
+- ✅ Toggle Numbers / Symbols
+- ✅ Copy-to-clipboard button
+- ✅ Dark theme UI (Tailwind)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
+- React (useState, useEffect, useCallback)
+- Tailwind CSS
+- Vite (recommended)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Password-Generator
+## How It Works (Simple)
+- `passwordGenerator()` creates a character string:
+  - Always letters
+  - Adds numbers if enabled
+  - Adds symbols if enabled
+- It picks random characters from that string based on `length`
+- `setPassword(pass)` updates the UI
+- `useEffect` runs the generator automatically whenever settings change
+
+---
+
+## Setup (Vite + React)
+
+### 1) Create project
+```bash
+npm create vite@latest password-generator -- --template react
+cd password-generator
+npm install
